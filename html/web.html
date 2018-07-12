@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html>
+<head>
+    
+    <style type="text/css">
+    
+    .buto:hover {
+                background-color: blue;
+                }
+    .buto:active {
+                background-color: red;
+                } 
+    </style>
+    <script type="text/javascript">
+        function tlink(a)
+        {
+            var fitxer = "/home/oriol/gitdownload/python/descarregar";
+            fitxer.open("w");
+            fitxer.write(a);
+            fitxer.close();
+        }
+    </script>
+</head>
+
+<body>
+
+<form>
+    
+    Introdueix link: <input type="text" name="link" id="slink"/>
+    
+    <button class="buto" onclick="tlink(this.form.slink.value)"> Submit </button>
+    
+</form>
+
+
+</body>
+
+</html>

@@ -7,7 +7,7 @@ proba=1
 
 while(proba==1):
     
-    fitxer = open("/home/oriol/html/a/descarregar", "r")
+    fitxer = open("/home/oriol/gitdownload/python/descarregar", "r")
     
     link = fitxer.readline()
     
@@ -17,7 +17,7 @@ while(proba==1):
         carpeta=link.split("/tree/master/")[1]
         nom = repositori.split('/')[4]
                 
-        server= "/home/oriol/html/a"
+        server= "/home/oriol/gitdownload/python"
         repositori=repositori + ".git"
         git.Git(server).clone(repositori)
         
@@ -28,7 +28,7 @@ while(proba==1):
         abans= abans.split('\n')[0]
         despres=carpeta
         
-        os.chdir("/home/oriol/html/a")
+        os.chdir("/home/oriol/gitdownload/python")
         
         time.sleep(5)
         
