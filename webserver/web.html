@@ -12,16 +12,7 @@
                 background-color: red;
                 } 
     </style>
-    <script type="text/javascript">
-        function tlink(a)
-        {
-            alert(a);
-                
-            var fs = require('fs')
 
-            fs.appendFile('proba.txt', a)
-        }
-    </script>
 </head>
 
 <body>
@@ -30,7 +21,7 @@
     
     Introdueix link: <input type="text" name="link" id="slink"/>
     
-    <button class="buto" onclick="tlink(this.form.slink.value)"> Submit </button>
+    <button class="buto" type="summit"> Submit </button>
     
 </form>
 

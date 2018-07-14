@@ -7,7 +7,7 @@ proba=1
 
 while(proba==1):
     
-    fitxer = open("/home/oriol/gitdownload/python/descarregar", "r")
+    fitxer = open("/home/oriol/gitdownload/python/descarregar.txt", "r")
     
     link = fitxer.readline()
     
