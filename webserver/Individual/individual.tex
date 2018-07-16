@@ -1,0 +1,59 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[catalan]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage[colorlinks,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\title{Pràctica 2: Zeros de funcions}
+\author{Oriol Ventosa Altimira: 1457285}
+\date{11 de març de 2018}
+\begin{document}
+	\maketitle
+	
+	\newpage
+
+	\section{Valor absolut}
+	
+	Observem que el valor absolut s'aproxima millor amb els nodes de Gauss-Legendre que amb Gauss-Chebyshev. 
+	
+	Això és degut a que per usar els nodes de Chebyshev hem hagut de multiplicar la funció per $\sqrt{1-x^2}$ i com més nodes tinguem més nodes seràn propers a $x=-1$ o $x=1$ creant un error de cancelació.
+	
+	Observem que el error amb la funció $\frac{e^{-x^2}}{\sqrt{1-x^2}}$ amb nodes de Legendre la aproximació no convergeix a cap nombre mentre que en el cas dels nodes de Chebyshev sí.
+	
+	Això és degut de nou a $\sqrt{1-x^2}$ que apareix en aquest cas en els nodes de Legendre i no en els de Chebyshev. De manera que en aquest cas l'error de cancelació es produirà en els nodes de Legendre.
+
+	Estimant les integrals de les dos funcions amb trapezis obtenim aquests resultats:
+	
+	En el cas de valor absolut, els trapezis donen un resultat exacte. 
+	
+	Això és perquè com trapezis fa una aproximació lineal de la funció i, si agafem un nombre parell de particions, un dels nodes caurà en el 0 i la resta estaràn repartits equidistantment en el interval assolint els extrems del interval. De manera que el reultat de l'aproximació lineal amb aquests valors serà exactament el valor absolut.
+	
+	En el cas de $\frac{e^{-x^2}}{\sqrt{1-x^2}}$ els trapezis fallen ja que la funció no esta ben definida a $x=-1$ i $x=1$. Si agafem valors propers a -1 i 1 tornem a obtenir un error de cancel·lació.
+	
+	
+	    \begin{figure}[h!]
+		\begin{center}	
+			\begin{tabular}{|c|c|c|c|}
+				\hline Iteració & Ordre 1 & Ordre 2 &Ordre 3 \\
+\hline 1 & 0.01248918081925201 & \textbf{0.005463913951181786 }& 0.002390417441942918 \\
+\hline 2 & 1.842692755025232 & \textbf{64.54890401705153 }& 2261.126277530449 \\
+\hline 3 & 1.702255038608466 & \textbf{32.35993528700995 }& 615.1636435369242 \\
+\hline 4 & 1.46280082950094 & \textbf{16.33591953962786 }& 182.4324007911864 \\
+\hline 5 & 1.104668372244713 & \textbf{8.433446801228495 }& 64.3840511199098 \\
+\hline 6 & 0.6698905392401661 & \textbf{4.629617534898694 }& 31.99531455355764 \\
+\hline 7 & 0.2824962810940362 & \textbf{2.914406725843755 }& 30.06682612156564 \\
+\hline 8 & 0.06405272718457172 & \textbf{2.339172858148314 }& 85.42539718146021 \\
+\hline 9 & 0.00431413316935736 & \textbf{2.459691339153118 }& 1402.3863535038 \\
+\hline 10 & 2.15632745224664E-05 & \textbf{2.849759631796303 }& 376618.5859459582 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{figure} 
+
+	
+	
+\end{document}
