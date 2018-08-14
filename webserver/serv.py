@@ -75,7 +75,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
                 s.path = '/index.html'
                 
             try:
-                file_to_open = open(self.path[1:]).read()
+                file_to_open = open(s.path[1:]).read()
                 s.send_response(200)
             except:
                 file_to_open = "file not found"

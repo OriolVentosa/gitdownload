@@ -3,7 +3,6 @@ import BaseHTTPServer
 import os
 import shutil
 
-
 class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     def do_HEAD(s):
         s.send_response(200)
@@ -17,7 +16,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         s.send_header("Content-type", "application/zip")
         s.end_headers()
         
-        with open('/home/oriol/gitdownload/webserver' + s.path, 'utf-8') as file: 
+        with open('/home/oriol/gitdownload/webserver/eee.zip', 'rb') as file: 
             s.wfile.write(file.read())
         
         
